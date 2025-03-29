@@ -1,0 +1,91 @@
+@import '@vercel/geist/styles.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Color Variables */
+@layer base {
+  :root {
+    --background: 210 50% 98%;
+    --foreground: 210 10% 10%;
+    --primary: 210 100% 50%;
+    --secondary: 210 40% 96%;
+    --accent: 210 100% 96%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 100% 50%;
+  }
+
+  .dark {
+    --background: 220 30% 7%;
+    --foreground: 210 20% 98%;
+    --primary: 210 100% 50%;
+    --secondary: 220 24% 12%;
+    --border: 220 24% 16%;
+    --input: 220 24% 16%;
+    --ring: 210 100% 50%;
+  }
+}
+
+@layer utilities {
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+  
+  .text-foreground {
+    color: hsl(var(--foreground));
+  }
+}
+
+/* Base Styling */
+@layer base {
+  * {
+    @apply p-0 m-0 outline-none;
+  }
+
+  body {
+    @apply w-screen h-screen bg-background overflow-y-hidden;
+    font-family: 'Geist', sans-serif;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+  }
+}
+
+/* Custom Components */
+@layer components {
+  .glass-card {
+    @apply bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm border border-white/20 dark:border-zinc-800/30 shadow-md rounded-2xl;
+  }
+  
+  .heading-gradient {
+    @apply bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-blue-300 bg-clip-text text-transparent;
+  }
+  
+  .feature-card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .button-pulse {
+    @apply relative;
+  }
+  
+  .button-pulse::after {
+    @apply content-[''] absolute top-0 left-0 w-full h-full bg-primary/50 rounded-xl blur-md opacity-0 transition-opacity;
+  }
+  
+  .button-pulse:hover::after {
+    @apply opacity-70 animate-pulse-subtle;
+  }
+
+  .modern-card {
+    @apply bg-card rounded-2xl border border-border/40 hover:border-primary/20 transition-all duration-300 shadow-sm;
+  }
+}
