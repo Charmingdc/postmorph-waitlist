@@ -14,7 +14,8 @@ export default {
         border: 'hsl(210, 20%, 90%)',
       },
       fontFamily: {
-        geist: ['Geist', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        urbanist:['Urbanist', 'sans-serif']
       },
       backgroundImage: {
 				   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

@@ -1,4 +1,6 @@
-@import '@vercel/geist/styles.css';
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&display=swap');
+
+
 
 @tailwind base;
 @tailwind components;
