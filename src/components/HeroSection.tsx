@@ -8,12 +8,13 @@ const HeroSection = () => {
 
    {/* Headline */}
    <h1 className="w-auto font-urbanist text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight my-4">
-      Turn <span className="heading-gradient">one piece of content</span> into dozens effortlessly
+     <span className="heading-gradient"> Join the Future of Content </span> Repurposing
    </h1>
    
    {/* Description */}
    <p className="w-[90%] font-urbanist text-foreground">
-      Stop wasting hours repurposing content manually. Our AI instantly transforms your videos, podcasts, and blogs into platform-ready posts for Twitter, LinkedIn, Instagram, and more—so you can grow faster with zero extra effort.
+     Tired of spending endless hours repurposing your content for different platforms? ContentFlip is here to change the game! 🤖 
+     Our AI-powered tool effortlessly transforms your content into ready-to-publish posts for Twitter, LinkedIn, Instagram, and more. Join our waitlist and be among the first to experience the magic!
    </p>
     
     <a className="w-full h-[3.5rem] flex items-center justify-center bg-primary text-white rounded-3xl my-14">
