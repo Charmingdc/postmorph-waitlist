@@ -1,44 +1,68 @@
 import { useState } from "react";
+import { FaqProps } from "./components/Accordion";
+import HeroSection from "./components/HeroSection";
+import WhyJoin from "./components/WhyJoin";
+import CtaForm from "./components/CtaForm";
+import Accordion from "./components/Accordion";
 import './index.css';
 
 const App = () => {
   const [email, setEmail] = useState<string>("");
+  const faqs: FaqProps[] = [
+   { 
+    headline: "What does this tool do?",
+    content: "It automatically converts your content into multiple formats (blogs, tweets, LinkedIn posts, threads, etc.) to maximize your reach with minimal effort."
+   },
+   { 
+    headline: "How does it work?", 
+    content: "Simply upload your content, and our AI handles the rest—extracting key insights, summarizing, and adapting it for different platforms." 
+   },
+   { 
+    headline: "When will it launch?", 
+    content: "We’re rolling out access soon! Join the waitlist to get early access and exclusive perks." 
+   },
+   {
+    headline: "Is it free?",
+    content: "Early users get special pricing and bonuses. Sign up to be notified first!"
+   }
+  ]
 
   return (
-    <main className="w-screen h-screen bg-hero-pattern bg-center font-urbanist flex flex-col items-center justify-center text-center p-0 px-[5%] -mt-12 overflow-y-hidden">
-      
-      {/* Logo / Title */}
-      <div className="font-urbanist rounded-xl border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-        🚀 Transform your content easily
+   <>
+    <header>
+     <nav>
+      <div className="w-screen flex items-center justify-between px-[6vw] mt-4">
+       <h1 className="heading-gradient font-bold text-xl"> 
+         ContentFlip.app 
+       </h1>
+       
+       <button> Logo </button>
       </div>
-
-      {/* Headline */}
-      <h1 className="font-urbanist text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight my-4">
-        Turn <span className="heading-gradient">one piece of content</span> into dozens effortlessly
-      </h1>
-
-      {/* Description */}
-      <p className="w-[85%] font-urbanist text-blue-500 dark:text-gray-300">
-        Effortlessly transform your content into multiple formats. Save hours, stay consistent, and grow your audience without extra work.
-      </p>
-
-      {/* Email Input Form */}
-      <form className="w-[90%] flex flex-col items-center py-4 mt-12">
-        <div className="w-[100%] h-14 relative flex items-center justify-start border border-primary/20 rounded-3xl">
-          <input 
-           type="email"
-           placeholder="Enter your email"
-           value={email}
-           onChange={(e) => setEmail(e.target.value)}
-           className="w-[100%] h-[100%] font-urbanist rounded-3xl border-none bg-transparent px-4 py-2 pr-[7rem] border border-gray-300 rounded-md focus:outline-none focus:ring-[.060rem] focus:ring-primary/10"
-          />
-        
-          <button className="w-[6rem] bg-primary py-2 text-white px-6 rounded-2xl absolute right-[.6rem]">
-           Join
-          </button>
-        </div>
-      </form>
+     </nav>
+    </header>
+    
+    <main className="w-screen bg-hero-pattern bg-center font-urbanist flex flex-col items-center justify-center text-center p-0 px-[8%] mt-16">
+    
+     <section className="w-full flex flex-col items-center justify-center text-center">
+       <HeroSection />
+       <WhyJoin />
+       <CtaForm 
+        email={email}
+        setEmail={setEmail} />
+      </section>
+      
+      <section className="w-full mt-16">
+       <div className="w-full flex flex-col items-center gap-4">
+        {faqs.map((faq, i) => (
+         <Accordion 
+          key={i}
+          headline={faq.headline}
+          content={faq.content} />
+        ))}
+       </div>
+      </section>
     </main>
+   </>
   );
 };
 
