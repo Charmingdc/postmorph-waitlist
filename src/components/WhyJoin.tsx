@@ -1,6 +1,6 @@
 const WhyJoin = () => {
  return (
-  <div className="w-full mx-auto rounded-xl bg-background/60 p-6 sm:p-7 border border-border/50 shadow-md backdrop-blur-lg">
+  <div className="w-full mx-auto rounded-xl bg-background/60 p-6 sm:p-7 border border-border/10 shadow-sm backdrop-blur-lg">
      <h3 className="text-xl sm:text-2xl font-bold text-foreground text-center">
         Join the Waitlist & Stay Ahead
      </h3>

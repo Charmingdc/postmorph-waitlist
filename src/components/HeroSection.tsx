@@ -16,7 +16,7 @@ const HeroSection = () => {
       Stop wasting hours repurposing content manually. Our AI instantly transforms your videos, podcasts, and blogs into platform-ready posts for Twitter, LinkedIn, Instagram, and more—so you can grow faster with zero extra effort.
    </p>
     
-    <a className="w-full h-[3.5rem] flex items-center justify-center bg-primary text-white rounded-3xl my-8">
+    <a className="w-full h-[3.5rem] flex items-center justify-center bg-primary text-white rounded-3xl my-14">
        Join the Waitlist 
    </a>
   </>

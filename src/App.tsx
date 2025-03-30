@@ -41,7 +41,7 @@ const App = () => {
      </nav>
     </header>
     
-    <main className="w-screen bg-hero-pattern bg-center font-urbanist flex flex-col items-center justify-center text-center p-0 px-[8%] mt-16">
+    <main className="w-screen font-urbanist flex flex-col items-center justify-center text-center p-0 px-[8%] mt-16">
     
      <section className="w-full flex flex-col items-center justify-center text-center">
        <HeroSection />
@@ -52,7 +52,7 @@ const App = () => {
       </section>
       
       <section className="w-full mt-16">
-       <div className="w-full flex flex-col items-center gap-4">
+       <div className="w-full flex flex-col items-center gap-4 mb-14">
         {faqs.map((faq, i) => (
          <Accordion 
           key={i}

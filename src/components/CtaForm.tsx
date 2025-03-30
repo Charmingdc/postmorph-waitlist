@@ -19,7 +19,7 @@ const CtaForm: React.FC<EmailProps> = ({email, setEmail}) => {
       
    {/* Email Input Form */}
    <form className="w-full flex flex-col items-center py-4">
-    <div className="w-[100%] h-14 relative flex items-center justify-start border border-primary/20 rounded-2xl">
+    <div className="w-[100%] h-14 relative flex items-center justify-start border border-border/10 rounded-2xl">
       <input 
        type="email"
        placeholder="Enter your email"

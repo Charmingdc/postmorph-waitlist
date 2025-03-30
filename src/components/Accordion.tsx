@@ -9,7 +9,7 @@ const Accordion = ({headline, content}: FaqProps) => {
  
  
  return (
-  <div className={`w-full h-${!isActive ? '[4.5rem]' : 'auto'} flex flex-col items-center bg-secondary border-border rounded-xl overflow-y-hidden`}>
+  <div className={`w-full h-${!isActive ? '[4.5rem]' : 'auto'} flex flex-col items-center rounded-xl bg-background/60 px-4 border border-border/10 shadow-sm backdrop-blur-lg overflow-y-hidden`}>
    <div className="w-full h-[4.5rem] px-2 flex flex-row items-center justify-between">
     <h3 className="text-md my-6">
      { headline }

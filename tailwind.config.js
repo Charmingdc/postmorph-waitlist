@@ -7,11 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        accent: 'rgb(240, 240, 255)',
-        primary: 'hsl(210, 100%, 50%)',
-        secondary: 'hsl(210, 40%, 96%)',
+        primary: 'hsl(var(--primary))',
+        foreground: 'hsl(var(--foreground))',
+        secondary: 'hsl(var(--secondary))',
+        input: 'hsl(var(--ring))',
+        ring: 'hsl(var(--ring))',
         muted: 'hsl(210, 20%, 96%)',
-        border: 'hsl(210, 20%, 90%)',
+        border: 'hsl(var(--border))',
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
