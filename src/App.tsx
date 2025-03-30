@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { Toaster } from "sonner";
 import { FaqProps } from "./components/Accordion";
 import HeroSection from "./components/HeroSection";
 import WhyJoin from "./components/WhyJoin";
 import CtaForm from "./components/CtaForm";
 import Accordion from "./components/Accordion";
+import Footer from "./components/Footer";
 import './index.css';
 
 const App = () => {
@@ -41,7 +43,7 @@ const App = () => {
      </nav>
     </header>
     
-    <main className="w-screen font-urbanist flex flex-col items-center justify-center text-center p-0 px-[8%] mt-16">
+    <main className="w-screen font-urbanist flex flex-col items-center justify-center text-center p-0 px-[5%] mt-16">
     
      <section className="w-full flex flex-col items-center justify-center text-center">
        <HeroSection />
@@ -62,6 +64,17 @@ const App = () => {
        </div>
       </section>
     </main>
+    
+    <Footer />
+    
+    
+    <Toaster
+     position='top-center'
+     richColors={true}
+     closeButton={true}
+     toastOptions={{
+      duration: 2000,
+     }} />
    </>
   );
 };
