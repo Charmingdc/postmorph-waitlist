@@ -12,12 +12,14 @@ const HeroSection = () => {
    </h1>
    
    {/* Description */}
-   <p className="w-[90%] font-urbanist text-foreground">
+   <p className="w-[90%] font-urbanist text-foreground mb-[.2rem]">
      Tired of spending endless hours repurposing your content for different platforms? ContentFlip is here to change the game! 🤖 
+   </p>
+   <p className="w-[90%] font-urbanist text-foreground">
      Our AI-powered tool effortlessly transforms your content into ready-to-publish posts for Twitter, LinkedIn, Instagram, and more. Join our waitlist and be among the first to experience the magic!
    </p>
     
-    <a className="w-full h-[3.5rem] flex items-center justify-center bg-primary text-white rounded-3xl my-14">
+    <a href="#waitlist" className="w-full h-[3.5rem] flex items-center justify-center bg-primary text-white rounded-3xl my-14">
        Join the Waitlist 
    </a>
   </>
