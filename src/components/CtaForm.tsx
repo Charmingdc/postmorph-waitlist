@@ -14,6 +14,13 @@ const CtaForm: React.FC<EmailProps> = ({email, setEmail}) => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const { width, height } = useWindowSize();
   
+  const images: string[] = [
+   'user1',
+   'user3',
+   'user2',
+   'user4'
+  ]
+  
  
   useEffect(() => {
    if (isActive) {
@@ -69,11 +76,27 @@ const CtaForm: React.FC<EmailProps> = ({email, setEmail}) => {
     </div>
    </form>
    
+   <div className="flex flex-row items-center justify-center -mt-[.4rem]">
+    <div className="flex flex-row items-center justify-center mr-2">
+     {images.map((img, i) => (
+       <img 
+        src={`/illustrations/${img}.jpg`}
+        width="25px" height="25px"
+        className="border border-secondary -ml-3 rounded-full"
+        alt={i} />
+      ))}
+    </div>
+    <h2> 
+     <strong> 1,250+ </strong>
+     people joined
+    </h2>
+   </div>
+   
    {isActive && (
     <Confetti
       width={width}
       height={height}
-      numberOfPieces={200}
+      numberOfPieces={100}
       gravity={0.3}
       opacity={0.8}
       style={{
