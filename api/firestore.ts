@@ -16,9 +16,9 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Allowed frontend origins
-const allowedOrigins = ["http://localhost:5173", "http://localhost:5173/", "https://contentflip-waitlist.vercel.app"];
+const allowedOrigins = ["http://localhost:5173", "http://localhost:5173/", "http://localhost:3000", "http://localhost:3000/", "https://contentflip-waitlist.vercel.app"];
 
-export default async function handler(req, res) {
+const handler = async (req, res) => {
   const origin = req.headers.origin || "";
   if (!allowedOrigins.includes(origin)) return res.status(403).json({ error: "Access Denied" });
 
@@ -56,3 +56,4 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: "An unknown error occurred" });
   }
 }
+export default handler;
