@@ -28,9 +28,10 @@ const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
 
     try {
       if (!email.trim()) throw new Error("Invalid input value 🥺");
+      console.log(email)
 
       const response = await fetch(
-        "/api/firestore",
+        "api/firestore",
         {
           method: "POST",
           headers: {
@@ -48,6 +49,7 @@ const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
     } catch (err) {
       const errorMessage =
         err instanceof Error ? err.message : "Something went wrong!";
+        console.error(err)
       toast.error(errorMessage);
       setIsActive(false);
     } finally {
