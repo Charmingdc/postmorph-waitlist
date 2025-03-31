@@ -30,7 +30,7 @@ const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
       if (!email.trim()) throw new Error("Invalid input value 🥺");
 
       const response = await fetch(
-        "https://contentflip-waitlist.vercel.app/api/firestore",
+        "/api/firestore",
         {
           method: "POST",
           headers: {
