@@ -12,6 +12,7 @@ const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
   const [emailCount, setEmailCount] = useState<number>(0);
   const hasGottenEmailCount = useRef<boolean>(false) 
   const [loading, setLoading] = useState<boolean>(false);
+  const [isLoadingCount, setIsLoadingCount] = useState<boolean>(false);
   const [isActive, setIsActive] = useState<boolean>(false);
   const { width, height } = useWindowSize();
   
@@ -35,6 +36,8 @@ const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
   
   
   const getNumberOfEmails = async () => {
+   setIsLoadingCount(true);
+   
    try {
      const response = await fetch("/api/firestore", {
       method: "GET",
@@ -50,7 +53,9 @@ const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
    } catch (error) {
      console.error(error);
      toast.error("Failed to fetch email count ❌");
-   } 
+   } finally {
+    setIsLoadingCount(false);
+   }
   };
   
  
@@ -123,7 +128,7 @@ const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
      </form>
 
      <div className="flex flex-row items-center justify-center -mt-[.4rem]">
-       {hasGottenEmailCount ? (
+       {!isLoadingCount ? (
         <>
          <div className="flex flex-row items-center justify-center mr-2">
           {images.map((img, i) => (
