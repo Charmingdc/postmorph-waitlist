@@ -117,7 +117,7 @@ const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
            type="submit"
            disabled={loading}
            className={`w-[6rem] ${loading ? 'bg-gray-500' : 'bg-primary'} py-[.6rem] text-white px-6 rounded-xl absolute right-[.6rem]`}>
-            {loading ? "Loading" : "Join"}
+            {loading ? "Joining" : "Join"}
          </button>
        </div>
      </form>
@@ -150,7 +150,7 @@ const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
        <Confetti
          width={width}
          height={height}
-         numberOfPieces={150}
+         numberOfPieces={200}
          gravity={0.3}
          opacity={0.8}
          style={{
