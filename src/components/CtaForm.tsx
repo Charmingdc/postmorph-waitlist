@@ -9,17 +9,17 @@ type EmailProps = {
 };
 
 const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
-  const [loading, setLoading] = useState<boolean>(false); // Fix: Use boolean instead of string
+  const [loading, setLoading] = useState<boolean>(false);
   const [isActive, setIsActive] = useState<boolean>(false);
   const { width, height } = useWindowSize();
 
   const images: string[] = ["user1", "user3", "user2", "user4"];
 
   useEffect(() => {
-    if (isActive) {
-      const timer = setTimeout(() => setIsActive(false), 5000);
-      return () => clearTimeout(timer);
-    }
+   if (isActive) {
+    const timer = setTimeout(() => setIsActive(false), 5000);
+     return () => clearTimeout(timer);
+   }
   }, [isActive]);
 
   const handleJoinWaitlist = async (e: React.FormEvent) => {
@@ -58,69 +58,64 @@ const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
 
   return (
     <>
-      <h3 className="text-lg mt-24 md:text-xl">
-        Join now! Repurpose content 10x faster before everyone else.
-      </h3>
+     <h3 className="text-lg mt-24 md:text-xl">
+       Join now! Repurpose content 10x faster before everyone else.
+     </h3>
 
-      {/* Email Input Form */}
-      <form
-        onSubmit={async (e) => await handleJoinWaitlist(e)}
-        className="w-full flex flex-col items-center py-4"
-      >
-        <div className="w-[100%] h-14 relative flex items-center justify-start border border-border/10 rounded-2xl">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-[100%] h-[100%] font-urbanist text-sm rounded-2xl border-none bg-transparent px-4 py-2 pr-[7rem] border border-gray-300 rounded-md focus:outline-none focus:ring-none"
-          />
+     {/* Email Input Form */}
+     <form
+      onSubmit={async (e) => await handleJoinWaitlist(e)}
+      className="w-full flex flex-col items-center py-4">
+       <div className="w-[100%] h-14 relative flex items-center justify-start border border-border/10 rounded-2xl">
+         <input
+           type="email"
+           placeholder="Enter your email"
+           value={email}
+           onChange={(e) => setEmail(e.target.value)}
+           className="w-[100%] h-[100%] font-urbanist text-sm rounded-2xl border-none bg-transparent px-4 py-2 pr-[7rem] border border-gray-300 rounded-md focus:outline-none focus:ring-none" />
 
-          <button
-            type="submit"
-            className="w-[6rem] bg-primary py-[.6rem] text-white px-6 rounded-xl absolute right-[.6rem]"
-          >
+         <button
+           type="submit"
+           className="w-[6rem] bg-primary py-[.6rem] text-white px-6 rounded-xl absolute right-[.6rem]">
             {loading ? "Loading" : "Join"}
-          </button>
-        </div>
-      </form>
+         </button>
+       </div>
+     </form>
 
-      <div className="flex flex-row items-center justify-center -mt-[.4rem]">
-        <div className="flex flex-row items-center justify-center mr-2">
-          {images.map((img, i) => (
-            <img
-              key={i} // Fix: Added key prop
-              src={`/illustrations/${img}.jpg`}
-              width="25px"
-              height="25px"
-              className="border border-secondary -ml-3 rounded-full"
-              alt={img} // Fix: Use image name instead of number
-            />
-          ))}
-        </div>
-        <h2>
-          <strong> 1,250+ </strong> people joined
-        </h2>
-      </div>
+     <div className="flex flex-row items-center justify-center -mt-[.4rem]">
+       <div className="flex flex-row items-center justify-center mr-2">
+        {images.map((img, i) => (
+          <img
+            key={i}
+            src={`/illustrations/${img}.jpg`}
+            width="25px"
+            height="25px"
+            className="border border-secondary -ml-3 rounded-full"
+            alt={img} />
+         ))}
+       </div>
+       <h2>
+         <strong> 1,250+ </strong> people joined
+       </h2>
+     </div>
 
-      {isActive && (
-        <Confetti
-          width={width}
-          height={height}
-          numberOfPieces={100}
-          gravity={0.3}
-          opacity={0.8}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            pointerEvents: "none",
-          }}
-        />
-      )}
-    </>
+     {isActive && (
+       <Confetti
+         width={width}
+         height={height}
+         numberOfPieces={100}
+         gravity={0.3}
+         opacity={0.8}
+         style={{
+           position: "fixed",
+           top: 0,
+           left: 0,
+           width: "100vw",
+           height: "100vh",
+           pointerEvents: "none",
+         }} />
+     )}
+   </>
   );
 };
 

@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
+import { getFirestore, doc, getDoc, setDoc, serverTimestamp, collection, getDocs } from "firebase/firestore";
 
 // Firebase config (from environment variables)
 const firebaseConfig = {
@@ -16,34 +16,44 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Allowed frontend domain
-const allowedOrigin = "http://localhost:5173/";
+// Allowed frontend origins
+const allowedOrigins = ["http://localhost:5173", "http://localhost:5173/", "https://contentflip-waitlist.vercel.app"];
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.headers.origin !== allowedOrigin) return res.status(403).json({ error: "Access Denied" });
+  const origin = req.headers.origin || "";
+  if (!allowedOrigins.includes(origin)) return res.status(403).json({ error: "Access Denied" });
 
-  res.setHeader("Access-Control-Allow-Origin", allowedOrigin);
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Origin", origin);
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
   if (req.method === "OPTIONS") return res.status(200).end();
 
   try {
-   if (req.method === "POST") {
-    const { email } = req.body;
-     if (!email) return res.status(400).json({ error: "Email is required" });
+    if (req.method === "POST") {
+      const { email } = req.body;
+      if (!email) return res.status(400).json({ error: "Email is required" });
 
-     const emailRef = doc(db, "email", email);
-     const docSnap = await getDoc(emailRef);
+      const emailRef = doc(db, "emails", email);
+      const docSnap = await getDoc(emailRef);
 
-     if (docSnap.exists()) return res.status(409).json({ error: "Email already exists" });
+      if (docSnap.exists()) return res.status(409).json({ error: "Email already exists" });
 
-     await setDoc(emailRef, { email, joinedAt: serverTimestamp() });
-     return res.status(201).json({ message: "Email added successfully" });
-   }
+      await setDoc(emailRef, { email, joinedAt: serverTimestamp() });
+      return res.status(201).json({ message: "Email added successfully" });
+    }
 
-   return res.status(405).json({ error: "Method Not Allowed" });
- } catch (error: any) {
-   return res.status(500).json({ error: error.message });
- }
+    if (req.method === "GET") {
+      const querySnapshot = await getDocs(collection(db, "emails"));
+      const emails = querySnapshot.docs.map((doc) => doc.data());
+      return res.status(200).json(emails);
+    }
+
+    return res.status(405).json({ error: "Method Not Allowed" });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return res.status(500).json({ error: error.message });
+    }
+    return res.status(500).json({ error: "An unknown error occurred" });
+  }
 }
