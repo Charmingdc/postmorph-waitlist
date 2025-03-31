@@ -77,7 +77,13 @@ const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
       await getNumberOfEmails();
      }
 
-     toast[data.type](data.message);
+     if (data.type === 'error') {
+      toast.error(data.message)
+     } else if (data.type === 'warning') {
+      toast.warning(data.message)
+     } else if (data.type === 'success') {
+      toast.success(data.message);
+     }
      setIsActive(data.type === "success");
    } catch (err) {
      toast.error(err instanceof Error ? err.message : "Unexpected error ❌");
