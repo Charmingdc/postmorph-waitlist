@@ -17,7 +17,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Allowed frontend domain
-const allowedOrigin = "https://your-allowed-domain.com";
+const allowedOrigin = "https://contentflip-waitlist.vercel.app";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.headers.origin !== allowedOrigin) return res.status(403).json({ error: "Access Denied" });
