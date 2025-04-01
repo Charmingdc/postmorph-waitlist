@@ -1,3 +1,4 @@
+import { VercelRequest, VercelResponse } from '@vercel/node';
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc, setDoc, serverTimestamp, collection, getDocs } from "firebase/firestore";
 
@@ -18,7 +19,7 @@ const db = getFirestore(app);
 // Allowed frontend origins
 const allowedOrigins = ["http://localhost:3000", "https://contentflip-waitlist.vercel.app", "https://contentflip-waitlist.vercel.app/api/firestore"];
 
-const handler = async (req, res) => {
+const handler = async (req: VercelRequest, res: VercelResponse) => {
   const origin = req.headers.origin || "";
   if (origin && !allowedOrigins.includes(origin)) {
     return res.status(403).json({ type: "error", message: "Access Denied" });
