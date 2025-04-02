@@ -13,7 +13,7 @@ const HeroSection = () => {
    
    {/* Description */}
    <p className="w-[90%] font-urbanist mb-[.4rem]">
-     Tired of repurposing content for every platform? ContentFlip does it for you! 🤖
+     Tired of repurposing content for every platform? Contentflip does it for you! 🤖
      
      Our AI transforms your content into ready-to-post tweets, LinkedIn updates, and more. Join the waitlist now!
    </p>
