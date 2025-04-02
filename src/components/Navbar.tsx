@@ -7,7 +7,7 @@ const Navbar = () => {
        width="60px"
        height="60px"
        alt="Contentflip Logo"
-       load="eager" />
+       loading="eager" />
          
      <h1 className="heading-gradient font-bold text-xl"> 
       Contentflip.app 
