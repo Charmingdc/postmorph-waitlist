@@ -4,12 +4,12 @@ import { getFirestore, doc, getDoc, setDoc, serverTimestamp, collection, getDocs
 
 // Firebase config (from environment variables)
 const firebaseConfig = {
-  apiKey: "AIzaSyC3mrpHnmoYHk2AxrUU6NUzjSmwbCJ4u8Y",
-  authDomain: "contentflip-waitlist.firebaseapp.com",
-  projectId: "contentflip-waitlist",
-  storageBucket: "contentflip-waitlist.firebasestorage.app",
-  messagingSenderId: "1095854282425",
-  appId: "1:1095854282425:web:2544028cc295922dd62d68"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID
 };
 
 // Initialize Firebase

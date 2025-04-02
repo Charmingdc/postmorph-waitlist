@@ -12,11 +12,10 @@ const HeroSection = () => {
    </h1>
    
    {/* Description */}
-   <p className="w-[90%] font-urbanist text-foreground mb-[.4rem]">
-     Tired of spending endless hours repurposing your content for different platforms? ContentFlip is here to change the game! 🤖 
-   </p>
-   <p className="w-[90%] font-urbanist text-foreground">
-     Our AI-powered tool effortlessly transforms your content into ready-to-publish posts for Twitter, LinkedIn, Instagram, and more. Join our waitlist and be among the first to experience the magic!
+   <p className="w-[90%] font-urbanist mb-[.4rem]">
+     Tired of repurposing content for every platform? ContentFlip does it for you! 🤖
+     
+     Our AI transforms your content into ready-to-post tweets, LinkedIn updates, and more. Join the waitlist now!
    </p>
     
     <a href="#waitlist" className="w-full h-[3.5rem] flex items-center justify-center bg-primary text-white rounded-3xl my-14">
