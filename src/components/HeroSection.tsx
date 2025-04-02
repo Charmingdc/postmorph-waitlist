@@ -12,7 +12,7 @@ const HeroSection = () => {
    </h1>
    
    {/* Description */}
-   <p className="w-[90%] font-urbanist text-foreground mb-[.2rem]">
+   <p className="w-[90%] font-urbanist text-foreground mb-[.4rem]">
      Tired of spending endless hours repurposing your content for different platforms? ContentFlip is here to change the game! 🤖 
    </p>
    <p className="w-[90%] font-urbanist text-foreground">

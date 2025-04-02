@@ -3,7 +3,7 @@ const Footer = () => {
  
  return (
   <footer className="text-center text-sm text-muted-foreground mt-8 border-t border-border/20 py-6">
-    © { currentYr } ContentFlip. All rights reserved.
+    © { currentYr } Contentflip. All rights reserved.
   </footer>
  )
 }

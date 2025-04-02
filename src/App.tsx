@@ -1,46 +1,24 @@
 import { useState } from "react";
 import { Toaster } from "sonner";
 import { FaqProps } from "./components/Accordion";
+import accordionsData from "./data/accordionsData";
+
+import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import WhyJoin from "./components/WhyJoin";
 import CtaForm from "./components/CtaForm";
-import Accordion from "./components/Accordion";
+import Accordions from "./components/Accordions";
 import Footer from "./components/Footer";
 import './index.css';
 
 const App = () => {
   const [email, setEmail] = useState<string>("");
-  const faqs: FaqProps[] = [
-   { 
-    headline: "What does this tool do?",
-    content: "It automatically converts your content into multiple formats (blogs, tweets, LinkedIn posts, threads, etc.) to maximize your reach with minimal effort."
-   },
-   { 
-    headline: "How does it work?", 
-    content: "Simply upload your content, and our AI handles the rest—extracting key insights, summarizing, and adapting it for different platforms." 
-   },
-   { 
-    headline: "When will it launch?", 
-    content: "We’re rolling out access soon! Join the waitlist to get early access and exclusive perks." 
-   },
-   {
-    headline: "Is it free?",
-    content: "Early users get special pricing and bonuses. Sign up to be notified first!"
-   }
-  ]
+  const faqs: FaqProps[] = accordionsData();
 
   return (
    <>
     <header>
-     <nav>
-      <div className="w-screen flex items-center justify-between px-[6vw] mt-4">
-       <h1 className="heading-gradient font-bold text-xl"> 
-         ContentFlip.app 
-       </h1>
-       
-       <button> Logo </button>
-      </div>
-     </nav>
+     <Navbar />
     </header>
     
     <main className="w-screen font-urbanist flex flex-col items-center justify-center text-center p-0 px-[5%] mt-16">
@@ -54,14 +32,7 @@ const App = () => {
       </section>
       
       <section className="w-full mt-16">
-       <div className="w-full flex flex-col items-center gap-4 mb-14">
-        {faqs.map((faq, i) => (
-         <Accordion 
-          key={i}
-          headline={faq.headline}
-          content={faq.content} />
-        ))}
-       </div>
+       <Accordions faqs={faqs} />
       </section>
     </main>
     
