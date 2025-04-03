@@ -10,7 +10,7 @@ const Navbar = () => {
        loading="eager" />
          
      <h1 className="heading-gradient font-bold text-xl"> 
-      Contentflip.app 
+      Contentflip
      </h1>
     </div>
    </nav>
