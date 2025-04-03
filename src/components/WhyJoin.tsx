@@ -24,7 +24,7 @@ const WhyJoin = () => {
           
          <div>
           <p className="font-medium">Multi-Platform Ready</p>
-          <p className="text-muted-foreground text-sm">Optimize content for X, LinkedIn, TikTok, and more—instantly.</p>
+          <p className="text-muted-foreground text-sm">Optimize content for X, LinkedIn, Reddit, and more—instantly.</p>
           </div>
        </div>
 
