@@ -9,7 +9,7 @@ const Navbar = () => {
        alt="Contentflip Logo"
        loading="eager" />
          
-     <h1 className="heading-gradient font-bold text-xl"> 
+     <h1 className="heading-gradient font-bold text-2xl"> 
       Contentflip
      </h1>
     </div>
