@@ -8,14 +8,16 @@ const HeroSection = () => {
 
    {/* Headline */}
    <h1 className="w-auto font-urbanist text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight my-4">
-     <span className="heading-gradient"> Join the Future of Content </span> Repurposing
+      Repurpose Smarter: <span className="heading-gradient"> Do More </span> With What You <span className="heading-gradient"> Create </span>
    </h1>
    
    {/* Description */}
    <p className="w-[90%] font-urbanist mb-[.4rem]">
-     Tired of repurposing content for every platform? Contentflip does it for you! 🤖
+     You weren’t meant to spend hours rewriting the same content for different platforms.
      
-     Our AI transforms your content into ready-to-post tweets, LinkedIn updates, and more. Join the waitlist now!
+     Contentflip instantly turns your content into platform-native posts — for X, LinkedIn, and more.
+     
+     Join the waitlist and take back your time.
    </p>
     
     <a href="#waitlist" className="w-full h-[3.5rem] flex items-center justify-center bg-primary text-white rounded-3xl my-14">
