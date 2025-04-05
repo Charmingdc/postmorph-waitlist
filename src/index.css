@@ -49,7 +49,7 @@
   }
 
   body {
-    @apply w-screen h-screen bg-background text-foreground;
+    @apply w-screen h-screen bg-background bg-dot-pattern text-foreground;
     font-family: 'Urbanist', sans-serif;
   }
 
