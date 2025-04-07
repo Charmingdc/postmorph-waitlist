@@ -17,7 +17,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Allowed frontend origins
-const allowedOrigins = ["https://contentflip-waitlist.vercel.app", "https://contentflip.vercel.app"];
+const allowedOrigins = ["https://postmorph-waitlist.vercel.app", "https://postmorph.vercel.app"];
 
 const handler = async (req: VercelRequest, res: VercelResponse) => {
   const origin = req.headers.origin || "";

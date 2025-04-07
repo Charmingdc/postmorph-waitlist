@@ -14,7 +14,7 @@ const HeroSection = () => {
    {/* Description */}
    <p className="w-[90%] font-urbanist mb-[.4rem]">
      You weren’t meant to spend hours rewriting content for every platform.
-     Contentflip instantly turns your ideas into platform-native posts — for X, LinkedIn, and more.
+     Postmorph instantly turns your ideas into platform-native posts — for X, LinkedIn, and more.
      Join the waitlist and take back your time.
    </p>
     

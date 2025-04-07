@@ -10,7 +10,7 @@ const Navbar = () => {
        loading="eager" />
          
      <h1 className="heading-gradient font-bold text-2xl"> 
-      Contentflip
+      Postmorph
      </h1>
     </div>
    </nav>

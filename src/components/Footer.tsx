@@ -9,7 +9,7 @@ const Footer = () => {
     className="text-primary"> Muis </a>
     
    <p className="mt-2">
-    © { currentYr } Contentflip. All rights reserved.
+    © { currentYr } Postmorph. All rights reserved.
    </p>
   </footer>
  )
