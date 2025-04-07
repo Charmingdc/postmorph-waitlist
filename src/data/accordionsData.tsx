@@ -8,7 +8,7 @@ const accordionsData = () => {
    },
    { 
     headline: "How does it work?", 
-    content: "Simply paste the url to your content or paste as text, and our AI handles the rest—extracting key insights, summarizing, and adapting it for different platforms." 
+    content: "Simply paste your content URL or drop in the text, choose your output format and tone — and let our AI do the rest. It extracts key insights, summarizes, and adapts your content perfectly for each platform." 
    },
    { 
     headline: "When will it launch?", 

@@ -102,7 +102,7 @@ const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
   return (
     <>
      <h3 className="text-lg mt-24 md:text-xl">
-       Join now! Repurpose content 10x faster before everyone else.
+       Join now! Save time & Repurpose content 10x faster before everyone else.
      </h3>
 
      {/* Email Input Form */}
@@ -135,16 +135,17 @@ const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
            <img
              key={i}
              src={`/illustrations/${img}.jpg`}
-             width="25px"
-             height="25px"
+             width="22px"
+             height="22px"
              className="border border-secondary -ml-3 rounded-full"
              alt={img} />
            ))}
          </div>
          
-         <strong className="mr-[.3rem]">
-          { emailCount }+
-         </strong> people joined already!
+         <span> Join </span>
+         <strong className="mx-[.4rem]">
+          { emailCount }+ creators!
+         </strong>
         </>
        ) : (
          <em> getting email count </em>
