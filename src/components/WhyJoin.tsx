@@ -26,14 +26,14 @@ const WhyJoin = () => {
 
      <div className="w-full flex flex-col items-center space-y-6 text-left text-sm sm:text-base text-foreground md:flex-row md:space-x-4">
        {points.map((point, i) => (
-         <div className="flex items-start gap-3">
-        <div className="text-primary text-lg"> { point.icon } </div>
+        <div key={i} className="flex items-start gap-3">
+          <div className="text-primary text-lg"> { point.icon } </div>
           
-         <div>
-          <p className="font-bold"> { point.title } </p>
-          <p className="text-muted-foreground text-sm"> { point.text } </p>
-          </div>
-       </div>
+           <div>
+            <p className="font-bold"> { point.title } </p>
+            <p className="text-muted-foreground text-sm"> { point.text } </p>
+           </div>
+         </div>
         ))}
      </div>
    </div>
