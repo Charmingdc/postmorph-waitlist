@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
 @tailwind base;
@@ -50,15 +50,19 @@
 
   body {
     @apply w-screen h-screen bg-background bg-dot-pattern text-foreground;
-    font-family: 'Urbanist', sans-serif;
+    font-family: 'Roboto', Sans-Serif;
   }
 
   html {
     @apply scroll-smooth;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
+  h1, h2, h3, h4, h5 {
+    font-weight: 800;
+  }
+  
+  p {
+   font-size: .96rem;
   }
 }
 
