@@ -2,7 +2,6 @@
 
 
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -22,7 +21,7 @@
   
   @media (prefers-color-scheme: dark) {
     :root {
-     --background: 220 30% 10%;
+     --background: 220 30% 7%;
      --foreground: 210 20% 85%;
      --primary: 210 100% 50%;
      --secondary: 220 24% 12%;
