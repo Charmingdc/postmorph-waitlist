@@ -21,7 +21,7 @@ const App = () => {
      <Navbar />
     </header>
     
-    <main className="w-screen font-urbanist flex flex-col items-center justify-center text-center p-0 px-[5%] mt-12">
+    <main className="w-screen flex flex-col items-center justify-center text-center p-0 px-[5%] mt-12">
      <section className="w-full flex flex-col items-center justify-center text-center">
        <HeroSection />
        <WhyJoin />

@@ -16,8 +16,8 @@ export default {
         border: 'hsl(var(--border))',
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        urbanist:['Urbanist', 'sans-serif']
+        poppins: ['Poppins', 'sans-serif'],
+        manrope:['Manrope', 'sans-serif']
       },
       backgroundImage: {
 				   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

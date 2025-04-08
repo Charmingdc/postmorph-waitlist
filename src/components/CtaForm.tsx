@@ -101,7 +101,7 @@ const CtaForm: React.FC<EmailProps> = ({ email, setEmail }) => {
   
   return (
     <>
-     <h3 className="text-lg mt-24 md:text-xl">
+     <h3 className="w-[90%] mt-24 md:text-lg">
        Join now! Save time & Repurpose content 10x faster before everyone else.
      </h3>
 

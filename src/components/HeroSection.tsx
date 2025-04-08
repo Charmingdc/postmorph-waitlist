@@ -7,7 +7,7 @@ const HeroSection = () => {
    </div>
 
    {/* Headline */}
-   <h1 className="w-auto text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight my-4">
+   <h1 className="w-auto text-4xl md:text-5xl lg:text-6xl font-bolder tracking-tight my-4">
      <span className="heading-gradient"> Create once. </span> Repurpose across every platform <span className="heading-gradient"> in seconds. </span>
    </h1>
    
