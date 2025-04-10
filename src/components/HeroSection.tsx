@@ -15,7 +15,7 @@ const HeroSection = () => {
    <p className="w-[90%] mb-[.4rem]">
      You weren’t meant to spend hours rewriting content for every platform.
      Postmorph instantly turns your ideas into platform-native posts — for X, LinkedIn, and more.
-     Join the waitlist and take back your time.
+     Join the <strong> waitlist </strong> and take back your time.
    </p>
     
     <a href="#waitlist" className="w-[94%] h-[3.5rem] flex items-center justify-center bg-primary text-white rounded-3xl my-10">
